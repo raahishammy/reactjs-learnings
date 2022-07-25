@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import Expenses from './components/expenses/Expenses';
+import AddExpense from './components/forms/AddExpense';
+import ExpenseDate from './components/expenses/ExpenseDate';
 
 class App extends Component {
   render() {
@@ -14,8 +16,18 @@ class App extends Component {
       {title: 'Rent & Installments', price: 500.99, date: new Date(2022, 6, 23)},
     ];
 
+    const [expeseList, setExpenseList] = useState(expenses);
+
+    const saveExpenseData = expeseData => {
+      console.log(expeseData);
+      /*setExpenseList( prevState => {
+        return ( ...prevState, expeseData);
+      })*/
+    }
+
     return (
       <div className="App">
+        <AddExpense onSaveExpense={saveExpenseData} />
         <Expenses expenses={expenses} />
       </div>
     );
