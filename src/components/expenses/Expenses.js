@@ -6,7 +6,7 @@ import Card from "../globals/Card";
 import Filters from "./Filters";
 
 const Expenses = (props) => {
-    const [filterDate, setfilterDate] = useState('2020');
+    const [filterDate, setfilterDate] = useState('2022');
     const applyFilterHandler = (filter) =>{
         console.log(filter);
         setfilterDate(filter);
